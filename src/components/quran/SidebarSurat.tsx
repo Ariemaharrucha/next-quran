@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import { Surat } from "@/types/quran";
 import { cn } from "@/lib/utils";
 
@@ -10,13 +9,13 @@ export default function SidebarSurat({ data }: { data: Surat[] }) {
   const pathname = usePathname();
 
   return (
-    <div className="w-64 border-r h-[calc(100vh)] sticky hidden md:block bg-background">
+    <div className="h-full bg-background flex flex-col">
       <div className="p-4 border-b">
         <h2 className="font-semibold mb-1">Daftar Surat</h2>
         <p className="text-xs text-gray-500">Pilih surat untuk dibaca</p>
       </div>
 
-      <ScrollArea className="h-[calc(100vh-9rem)]">
+      <div className="flex-1 overflow-y-auto">
         <div className="p-2 space-y-1">
           {data.map((surat) => {
             const isActive = pathname === `/surat/${surat.nomor}`;
@@ -44,7 +43,7 @@ export default function SidebarSurat({ data }: { data: Surat[] }) {
             );
           })}
         </div>
-      </ScrollArea>
+      </div>
     </div>
   );
 }

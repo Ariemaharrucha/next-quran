@@ -1,37 +1,27 @@
-import { Card, CardContent } from "@/components/ui/card";
 import { getSuratDetail } from "@/lib/api";
+import HeaderDetail from "@/components/quran/HeaderDetail"; // Import komponen baru
+import { Card, CardContent } from "@/components/ui/card";
 
-export default async function SuratDetail({ params }: { params: { id: string } }) {
+interface PageProps { params: Promise<{ id: string }> }
+
+export default async function SuratDetailPage({ params }: PageProps) {
   const { id } = await params;
   const surat = await getSuratDetail(parseInt(id));
-  return (
-    <main className="p-4">
-      <div className="text-center mb-8 bg-green-50 p-6 rounded-xl border border-green-100">
-        <h1 className="text-3xl font-bold mb-2">{surat.namaLatin}</h1>
-        <p className="text-xl font-serif text-gray-600 mb-2">{surat.nama}</p>
-        <div className="flex justify-center gap-2 text-sm text-gray-500">
-          <span>{surat.arti}</span>
-          <span>•</span>
-          <span>{surat.jumlahAyat} Ayat</span>
-          <span>•</span>
-          <span>{surat.tempatTurun}</span>
-        </div>
 
-        <audio controls className="w-full mt-6 h-10">
-          <source src={surat.audioFull["05"]} type="audio/mpeg" />
-          Browser tidak support audio.
-        </audio>
-      </div>
+  return (
+    <main className="p-4 container mx-auto max-w-4xl">
+      
+      <HeaderDetail data={surat} />
 
       <div className="space-y-4">
         {surat.ayat.map((item) => (
           <Card
             key={item.nomorAyat}
-            className="border-l-4 border-l-green-500 shadow-sm"
+            className="border-l-4 border-l-green-500 shadow-sm transition hover:shadow-md"
           >
             <CardContent className="p-6">
               <div className="flex justify-between items-start mb-4">
-                <span className="bg-gray-100 w-8 h-8 flex items-center justify-center rounded-full text-sm font-bold">
+                <span className="bg-gray-100 w-8 h-8 flex items-center justify-center rounded-full text-sm font-bold text-gray-700">
                   {item.nomorAyat}
                 </span>
                 <div className="text-right w-full pl-4">
