@@ -5,7 +5,7 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/co
 
 export default function Navbar() {
   return (
-    <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur">
       <div className="container flex h-16 items-center justify-between mx-auto max-w-7xl px-4">
         
         {/* LOGO KIRI */}
@@ -37,7 +37,7 @@ export default function Navbar() {
                    Quran Digital
                 </SheetTitle>
               </SheetHeader>
-              <div className="grid gap-4 py-4 mt-4">
+              <div className="grid gap-4 p-4 mt-4">
                 <Link href="/" className="text-sm font-medium hover:text-green-600">
                   Beranda
                 </Link>
