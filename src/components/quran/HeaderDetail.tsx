@@ -8,7 +8,6 @@ import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";   
 import { ChevronLeft, ChevronRight, List } from "lucide-react"; 
 import { Button } from "@/components/ui/button"; 
-import { cn } from "@/lib/utils";
 import SurahPickerDialog from "./SurahPickerDialog";
 
 const QORI_NAMES: Record<string, string> = {
@@ -45,7 +44,7 @@ export default function HeaderDetail({ data, allSurat, settings }: HeaderProps) 
   const listAyat = Array.from({ length: data.jumlahAyat }, (_, i) => i + 1);
 
   return (
-    <div className="text-center mb-6 bg-green-50/90 p-2 rounded-xl border border-green-100 sticky top-0 z-20 shadow-sm backdrop-blur-xl supports-[backdrop-filter]:bg-green-50/60">
+    <div className="text-center mb-6 bg-green-50/90 p-2 rounded-xl border border-green-100 sticky top-0 z-20 shadow-sm backdrop-blur-xl supports-backdrop-filter:bg-green-50/60">
       
       <div className="flex items-center justify-between mb-2">
         <div className="w-12 text-left">
@@ -132,7 +131,7 @@ export default function HeaderDetail({ data, allSurat, settings }: HeaderProps) 
               </Label>
             </div>
 
-            <div className="w-[1px] h-4 bg-gray-300"></div>
+            <div className="w-px h-4 bg-gray-300"></div>
 
             <div className="flex items-center gap-2">
               <Switch 
