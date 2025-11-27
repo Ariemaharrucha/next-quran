@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/navbar";
 import FooterWrapper from "@/components/layout/footer-wrapper";
+import GridBackground from "@/components/layout/grid-background";
   
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,6 +26,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <GridBackground />
         <Navbar />
         {children}
         <FooterWrapper />
