@@ -8,11 +8,11 @@ export default async function SuratLayout({ children}: { children: React.ReactNo
     <div className="flex container mx-auto max-w-7xl h-[calc(100vh-4rem)] overflow-hidden">
       <aside className="w-64 boreder-r hidden md:block">
         <div className="h-full">
-          <SidebarSurat data={allSurat} />
+          <SidebarSurat dataSurat={allSurat} />
         </div>
       </aside>
       <main className="flex-1 min-w-0 overflow-y-auto">
-        <div className="p-2">
+        <div className="">
           {children}
         </div>
       </main>

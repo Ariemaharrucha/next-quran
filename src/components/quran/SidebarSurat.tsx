@@ -4,20 +4,35 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Surat } from "@/types/quran";
 import { cn } from "@/lib/utils";
+import { useState } from "react";
 
-export default function SidebarSurat({ data }: { data: Surat[] }) {
+export default function SidebarSurat({ dataSurat }: { dataSurat: Surat[] }) {
   const pathname = usePathname();
+  const [search, setSearch] = useState("");
+  
+  const filteredSurat = dataSurat.filter((surat) =>
+    surat.namaLatin.toLowerCase().includes(search.toLowerCase()) ||
+    surat.arti.toLowerCase().includes(search.toLowerCase())
+  );
 
   return (
     <div className="h-full bg-background flex flex-col">
-      <div className="p-4 border-b">
+      <div className="p-2 border-b">
         <h2 className="font-semibold mb-1">Daftar Surat</h2>
         <p className="text-xs text-gray-500">Pilih surat untuk dibaca</p>
+        <div className="my-2">
+          <input
+            type="text"
+            placeholder="Cari surat..."
+            className="w-full p-1.5 border rounded-lg shadow-sm focus:ring-2 focus:ring-green-500 outline-none"
+            onChange={(e) => setSearch(e.target.value)}
+          />
+        </div>
       </div>
 
       <div className="flex-1 overflow-y-auto">
         <div className="p-2 space-y-1">
-          {data.map((surat) => {
+          {filteredSurat.map((surat) => {
             const isActive = pathname === `/surat/${surat.nomor}`;
 
             return (

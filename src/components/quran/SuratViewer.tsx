@@ -1,18 +1,18 @@
 "use client";
 
 import { useState } from "react";
-import { SuratDetail, Ayat } from "@/types/quran";
+import { SuratDetail, Ayat, Surat } from "@/types/quran";
 import HeaderDetail from "./HeaderDetail";
 import { Card, CardContent } from "@/components/ui/card";
 
-export default function SuratViewer({ data }: { data: SuratDetail }) {
+export default function SuratViewer({ data, allSurat }: { data: SuratDetail; allSurat: Surat[] }) {
   const [showLatin, setShowLatin] = useState(true);
   const [showTerjemahan, setShowTerjemahan] = useState(true);
 
 
   return (
     <div className="space-y-6">
-      <HeaderDetail data={data} settings={{ showLatin, setShowLatin, showTerjemahan, setShowTerjemahan }} />
+      <HeaderDetail data={data} allSurat={allSurat} settings={{ showLatin, setShowLatin, showTerjemahan, setShowTerjemahan }} />
 
       <div className="space-y-4">
         {data.ayat.map((item: Ayat) => (
