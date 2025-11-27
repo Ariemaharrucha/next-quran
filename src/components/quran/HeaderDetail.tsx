@@ -61,13 +61,13 @@ export default function HeaderDetail({ data, allSurat, settings }: HeaderProps) 
   const listAyat = Array.from({ length: data.jumlahAyat }, (_, i) => i + 1);
 
   return (
-    <div className="text-center mb-6 bg-white/90 p-2 rounded-2xl border border-blue-100 sticky top-0 z-20 shadow-sm backdrop-blur-xl supports-backdrop-filter:bg-white/60">
+    <div className="text-center mb-6 bg-white/90 p-2 rounded-2xl border border-100 sticky top-0 z-20 shadow-sm backdrop-blur-xl supports-backdrop-filter:bg-white/60">
        
       <div className="flex items-center justify-between mb-4">
         <div className="w-12 text-left">
           {data.nomor > 1 && (
             <Link href={`/surat/${prevNomor}`}>
-              <Button variant="ghost" size="icon" className="h-9 w-9 text-slate-500 hover:text-blue-600 hover:bg-blue-50 rounded-full">
+              <Button variant="ghost" size="icon" className="h-9 w-9 text-slate-500 hover:text-gold-ornament-600 hover:bg-gold-ornament-100 rounded-full cursor-pointer">
                 <ChevronLeft className="h-5 w-5" />
               </Button>
             </Link>
@@ -81,7 +81,7 @@ export default function HeaderDetail({ data, allSurat, settings }: HeaderProps) 
         <div className="w-12 text-right">
           {data.nomor < 114 && (
             <Link href={`/surat/${nextNomor}`}>
-              <Button variant="ghost" size="icon" className="h-9 w-9 text-slate-500 hover:text-blue-600 hover:bg-blue-50 rounded-full">
+              <Button variant="ghost" size="icon" className="h-9 w-9 text-slate-500 hover:text-gold-ornament-600 hover:bg-gold-ornament-100 rounded-full cursor-pointer">
                 <ChevronRight className="h-5 w-5" />
               </Button>
             </Link>
@@ -89,12 +89,12 @@ export default function HeaderDetail({ data, allSurat, settings }: HeaderProps) 
         </div>
       </div>
 
-      <div className="flex justify-center flex-wrap gap-2 text-xs md:text-sm text-slate-500 mb-6 border-b border-slate-100 pb-4">
-        <span className="bg-slate-50 px-2 py-1 rounded-md">{data.arti}</span>
+      <div className="flex justify-center flex-wrap gap-2 text-xs md:text-sm text-slate-800 mb-6 border-b border-slate-100 pb-4">
+        <span className="bg-gold-ornament-100 px-2 py-1 rounded-md">{data.arti}</span>
         <span className="py-1">•</span>
-        <span className="bg-slate-50 px-2 py-1 rounded-md">{data.jumlahAyat} Ayat</span>
+        <span className="bg-gold-ornament-100 px-2 py-1 rounded-md">{data.jumlahAyat} Ayat</span>
         <span className="py-1">•</span>
-        <span className="bg-slate-50 px-2 py-1 rounded-md">{data.tempatTurun}</span>
+        <span className="bg-gold-ornament-100 px-2 py-1 rounded-md">{data.tempatTurun}</span>
       </div>
 
       <div className="flex flex-col gap-4 max-w-3xl mx-auto">    
@@ -105,7 +105,7 @@ export default function HeaderDetail({ data, allSurat, settings }: HeaderProps) 
             <div className="flex items-center gap-2">
                <span className="text-xs font-semibold text-slate-400 md:hidden">Ayat:</span>
                <Select onValueChange={handleScrollToAyat}>
-                <SelectTrigger className="w-[90px] md:w-[100px] text-blue-700 border-blue-300 h-9 text-xs focus:ring-blue-200">
+                <SelectTrigger className="w-[90px] md:w-[100px] text-gold-ornament-700 border-gold-ornament-300 h-9 text-xs focus:ring-gold-ornament-200 cursor-pointer">
                   <SelectValue placeholder="Ayat" />
                 </SelectTrigger>
                 <SelectContent>
@@ -124,7 +124,7 @@ export default function HeaderDetail({ data, allSurat, settings }: HeaderProps) 
                   setSelectedQori(val);
                   setIsPlaying(false); // Reset play state saat ganti Qori
               }}>
-                <SelectTrigger className="w-full md:w-[200px] text-blue-700 border-blue-300 h-9 text-xs truncate focus:ring-blue-200">
+                <SelectTrigger className="w-full md:w-[200px] text-gold-ornament-700 border-gold-ornament-300 h-9 text-xs truncate focus:ring-gold-ornament-200 cursor-pointer">
                   <SelectValue placeholder="Pilih Qori" />
                 </SelectTrigger>
                 <SelectContent>
@@ -144,9 +144,9 @@ export default function HeaderDetail({ data, allSurat, settings }: HeaderProps) 
                 id="latin-mode" 
                 checked={settings.showLatin} 
                 onCheckedChange={settings.setShowLatin} 
-                className="scale-75 md:scale-90 data-[state=checked]:bg-blue-600"
+                className="scale-75 md:scale-90 data-[state=checked]:bg-gold-ornament-600 cursor-pointer"
               />
-              <Label htmlFor="latin-mode" className="text-xs md:text-sm cursor-pointer font-medium text-slate-600">
+              <Label htmlFor="latin-mode" className="text-xs md:text-sm font-medium text-slate-600">
                   Latin
               </Label>
             </div>
@@ -158,9 +158,9 @@ export default function HeaderDetail({ data, allSurat, settings }: HeaderProps) 
                 id="terjemahan-mode" 
                 checked={settings.showTerjemahan} 
                 onCheckedChange={settings.setShowTerjemahan} 
-                className="scale-75 md:scale-90 data-[state=checked]:bg-blue-600"
+                className="scale-75 md:scale-90 data-[state=checked]:bg-gold-ornament-600 cursor-pointer"
               />
-              <Label htmlFor="terjemahan-mode" className="text-xs md:text-sm cursor-pointer font-medium text-slate-600">
+              <Label htmlFor="terjemahan-mode" className="text-xs md:text-sm font-medium text-slate-600">
                   Arti
               </Label>
             </div>
@@ -180,10 +180,10 @@ export default function HeaderDetail({ data, allSurat, settings }: HeaderProps) 
                 <Button
                     onClick={toggleAudio}
                     variant="outline"
-                    className={`w-full rounded-lg border transition-all duration-300 ${
+                    className={`w-full rounded-lg border transition-all duration-300 cursor-pointer ${
                         isPlaying 
-                        ? "bg-blue-100 text-blue-700 border-blue-300 hover:bg-blue-200" 
-                        : "bg-white text-slate-600 border-blue-200 hover:bg-blue-50 hover:text-blue-600 hover:border-blue-300"
+                        ? "bg-gold-ornament-100 text-gold-ornament-700 border-gold-ornament-300 hover:bg-gold-ornament-200" 
+                        : "bg-white text-slate-600 border-gold-ornament-200 hover:bg-gold-ornament-50 hover:text-gold-ornament-600 hover:border-gold-ornament-300"
                     }`}
                 >
                     {isPlaying ? (
@@ -206,7 +206,7 @@ export default function HeaderDetail({ data, allSurat, settings }: HeaderProps) 
 
         <div className="md:hidden mt-0">
             <SurahPickerDialog allSurat={allSurat}>
-                <Button variant="outline" className="w-full border-blue-200 text-blue-600 hover:bg-blue-50 h-12 rounded-xl shadow-sm">
+                <Button variant="outline" className="w-full border-gold-ornament-200 text-gold-ornament-600 hover:bg-gold-ornament-50 h-12 rounded-xl shadow-sm">
                   <List className="w-5 h-5 mr-2" />
                     Pilih Surat Lain
                 </Button>
