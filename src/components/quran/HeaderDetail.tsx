@@ -61,7 +61,7 @@ export default function HeaderDetail({ data, allSurat, settings }: HeaderProps) 
   const listAyat = Array.from({ length: data.jumlahAyat }, (_, i) => i + 1);
 
   return (
-    <div className="text-center mb-6 bg-white/90 p-2 rounded-2xl border border-100 sticky top-0 z-20 shadow-sm backdrop-blur-xl supports-backdrop-filter:bg-white/60">
+    <div className="text-center mb-6 bg-white/90 p-2 rounded-2xl border border-gold-ornament-100 sticky top-0 z-20 shadow-sm backdrop-blur-xl supports-backdrop-filter:bg-white/60">
        
       <div className="flex items-center justify-between mb-4">
         <div className="w-12 text-left">
