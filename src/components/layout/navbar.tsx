@@ -5,8 +5,8 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/co
 
 export default function Navbar() {
   return (
-    <nav className="sticky top-0 z-50 w-full border-b border-gold-ornament-100 bg-white/80 backdrop-blur-md supports-backdrop-filter:bg-white/60">
-      <div className="container flex h-16 items-center justify-between mx-auto max-w-7xl px-4">
+    <nav className="sticky top-0 z-50 w-full border-b border-gold-ornament-900 bg-white/80 backdrop-blur-md supports-backdrop-filter:bg-white/60 ">
+      <div className=" flex h-16 items-center justify-between mx-auto max-w-7xl px-4 ">
         
         <Link href="/" className="flex items-center gap-2 font-bold text-xl tracking-tight text-slate-800">
           <div className="bg-linear-to-tr from-gold-ornament-600 to-gold-ornament-500 text-white p-1.5 rounded-lg shadow-sm shadow-gold-ornament-200">

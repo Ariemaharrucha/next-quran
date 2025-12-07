@@ -17,9 +17,11 @@ export default function SurahList({ dataSurat }: { dataSurat: Surat[] }) {
   return (
     <div className="pb-20">
       
-      <div className="my-8 text-center space-y-2">
-        <h1 className="text-3xl font-bold text-gold-ornament-600">Daftar Surat</h1>
-        <p className="text-slate-500">Pilih surat yang ingin kamu baca hari ini</p>
+      <div className="flex justify-center items-center ">
+        <div className="my-8 text-center space-y-2 w-2xl">
+          <h1 className="text-3xl font-bold text-gold-ornament-600">Daftar Surat</h1>
+          <p className="text-slate-500">Pilih surat yang ingin kamu baca hari ini</p>
+        </div>
       </div>
 
       <div className="relative max-w-xl mx-auto mb-10">
@@ -29,7 +31,7 @@ export default function SurahList({ dataSurat }: { dataSurat: Surat[] }) {
         <input
           type="text"
           placeholder="Cari surat..."
-          className="w-full pl-11 pr-4 py-3 md:py-4 bg-white border border-slate-200 rounded-lg shadow-sm text-slate-700 placeholder:text-slate-400 focus:outline-none focus:ring-4 focus:ring-gold-ornament-50 focus:border-gold-ornament-300 transition-all"
+          className="w-full pl-11 pr-4 py-3 md:py-4 bg-white border border-gold-ornament-600 rounded-lg shadow-sm text-slate-700 placeholder:text-slate-400 focus:outline-none focus:ring-4 focus:ring-gold-ornament-50 focus:border-gold-ornament-300 transition-all"
           onChange={(e) => setSearch(e.target.value)}
         />
       </div>
